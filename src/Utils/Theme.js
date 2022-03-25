@@ -1,4 +1,4 @@
-import { createTheme as MuiCreateTheme } from "@material-ui/core"
+import { createTheme } from '@material-ui/core/styles';
 
 const colors = {
     Dark: {
@@ -6,17 +6,39 @@ const colors = {
         typo: '#fff'
     },
     Light: {
-        background: '#fff',
+        background: '#ccc',
         typo: '#000'
     }
 }
 // Create a theme instance.
-const createTheme = (direction, themeMode) =>
-    MuiCreateTheme({
+const createCustomTheme = (direction,themeMode) =>
+    createTheme({
         direction: direction,
         palette: {
-            background: colors[themeMode].background,
-            typography: colors[themeMode].typo
+            primary: {
+                main: colors[themeMode].background,
+            },
+            secondary: {
+                main: colors[themeMode].typo,
+            },
+            common: {
+                main: "#FFFFFF",
+                secondary: "#212121",
+                background: '#sdf',
+                darkBlue: "#232E42",
+                grey: "#A7A7A7",
+                lightGrey: "#3E4A60",
+                orange: "#FFAB44",
+                dividerColor: "#767676"
+            },
+            error: {
+                main: "#FF5844",
+            },
+            // background: {
+            //   default: "#fff",
+            // },
+            direction: direction,
+
         },
         typography: {
             fontFamily: "VazirMedium",
@@ -35,15 +57,8 @@ const createTheme = (direction, themeMode) =>
                     },
                 },
             },
-            selected: {
-                '&.Mui-selected': {
-                    backgroundColor: "turquoise",
-                    color: "white",
-                    fontWeight: 600
-                }
-            }
         },
     })
 
 
-export default createTheme
+export default createCustomTheme

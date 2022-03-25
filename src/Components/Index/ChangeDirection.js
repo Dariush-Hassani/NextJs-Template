@@ -1,8 +1,13 @@
 import React from 'react'
-import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from '@material-ui/core'
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import { ChangeDirectionStyles } from './_Styles'
 import { useDispatch, useSelector } from 'react-redux';
 import { ChangeLanguage } from '../../Redux/Actions/AppActions';
+import { Box, Typography } from '@material-ui/core';
 const ChangeDirection = () => {
     const classes = ChangeDirectionStyles();
     const dispatch = useDispatch();
@@ -13,6 +18,7 @@ const ChangeDirection = () => {
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Direction</InputLabel>
                 <Select
+                    className={classes.selectt}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={dir === undefined ? 'rtl' : dir}

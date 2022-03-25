@@ -7,7 +7,7 @@ import { setBreakPoint } from "../src/Utils/Functions";
 import { useEffect, useMemo } from "react";
 import { ChangeBreakPoint } from "../src/Redux/Actions/AppActions";
 import CssBaseline from "@material-ui/core/CssBaseline"
-import createTheme from "../src/utils/theme"
+import createCustomTheme from "../src/Utils/Theme"
 import { create } from "jss"
 import rtl from "jss-rtl"
 import { StylesProvider, jssPreset } from "@material-ui/core/styles"
@@ -41,7 +41,7 @@ function MyApp(props) {
   const direction = appState.Language?.direction === undefined ? 'rtl' : appState.Language?.direction;
   const themeMode = appState.ThemeMode === undefined ? 'Dark' : appState.ThemeMode;
 
-  const theme = useMemo(() => createTheme(direction, themeMode), [direction, themeMode])
+  const theme = useMemo(() => createCustomTheme(direction, themeMode), [direction, themeMode])
   return (
     <React.Fragment>
       <StylesProvider jss={jss}>
