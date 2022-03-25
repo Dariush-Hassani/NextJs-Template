@@ -3,7 +3,7 @@ import { createTheme } from '@material-ui/core/styles';
 const colors = {
     Dark: {
         background: '#000',
-        typo: '#fff'
+        typo: '#fff',
     },
     Light: {
         background: '#ccc',
@@ -21,27 +21,8 @@ const createCustomTheme = (direction,themeMode) =>
             secondary: {
                 main: colors[themeMode].typo,
             },
-            common: {
-                main: "#FFFFFF",
-                secondary: "#212121",
-                background: '#sdf',
-                darkBlue: "#232E42",
-                grey: "#A7A7A7",
-                lightGrey: "#3E4A60",
-                orange: "#FFAB44",
-                dividerColor: "#767676"
-            },
-            error: {
-                main: "#FF5844",
-            },
-            // background: {
-            //   default: "#fff",
-            // },
-            direction: direction,
-
         },
         typography: {
-            fontFamily: "VazirMedium",
             fontWeightLight: 300,
             fontWeightRegular: 400,
             fontWeightMedium: 500,

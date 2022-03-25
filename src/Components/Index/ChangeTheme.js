@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Button, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, Typography } from '@material-ui/core'
+import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Typography, } from '@material-ui/core'
 import { ChangeThemeStyles } from './_Styles'
 import { useDispatch, useSelector } from 'react-redux';
 import { ChangeTheme as ChangeThemeAction } from '../../Redux/Actions/AppActions';
-import TextField from '@material-ui/core/TextField';
 
 const ChangeTheme = () => {
     const classes = ChangeThemeStyles();
@@ -14,10 +13,9 @@ const ChangeTheme = () => {
         setLMode(mode);
     },[mode]);
     return (
-        <Box>
-            <Typography variant='h2' component='h2' className={classes.title}>ChangeTheme</Typography>
+        <Box className={classes.container} >
+            <Typography className={classes.themeTitle}>Theme Mode</Typography>
             <FormControl>
-                <FormLabel id="demo-radio-buttons-group-label">change theme</FormLabel>
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     name="radio-buttons-group"
@@ -28,8 +26,8 @@ const ChangeTheme = () => {
                         )
                     }}
                 >
-                    <FormControlLabel value="Dark" className={classes.title} control={<Radio />} label="Dark" />
-                    <FormControlLabel value="Light" className={classes.title} control={<Radio />} label="Light" />
+                    <FormControlLabel value="Dark" className={classes.radio} control={<Radio />} label="Dark" />
+                    <FormControlLabel value="Light" className={classes.radio} control={<Radio />} label="Light" />
                 </RadioGroup>
             </FormControl>
             
