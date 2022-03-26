@@ -14,34 +14,42 @@ import { StylesProvider, jssPreset } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/core/styles"
 import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 
 function MyApp(props) {
   const { Component, pageProps } = props;
   const dispatch = useDispatch();
+  const appState = useSelector(state => state.App);
+  const router = useRouter();
+
+  const direction = appState.Language?.direction === undefined ? 'rtl' : appState.Language?.direction;
+  const themeMode = appState.ThemeMode === undefined ? 'Dark' : appState.ThemeMode;
+  const theme = useMemo(() => createCustomTheme(direction, themeMode), [direction, themeMode]);
+
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
 
-    if (typeof window !== undefined) {
-      window.addEventListener('resize', () => {
-        let breakpoint = setBreakPoint();
-        dispatch(ChangeBreakPoint(breakpoint));
-      })
+    router.push(router.asPath, undefined, { locale: appState.Language.lang })
+
+    const setBreaks = () => {
+      let breakpoint = setBreakPoint();
+      dispatch(ChangeBreakPoint(breakpoint));
     }
+    if (typeof window !== undefined) {
+      window.addEventListener('resize', setBreaks)
+    }
+    return (() => {
+      window.removeEventListener('resize', setBreaks)
+    })
   }, []);
-
-
 
   const jss = create({
     plugins: [...jssPreset().plugins, rtl()],
   })
-  const appState = useSelector(state => state.App);
-  const direction = appState.Language?.direction === undefined ? 'rtl' : appState.Language?.direction;
-  const themeMode = appState.ThemeMode === undefined ? 'Dark' : appState.ThemeMode;
 
-  const theme = useMemo(() => createCustomTheme(direction, themeMode), [direction, themeMode])
   return (
     <React.Fragment>
       <StylesProvider jss={jss}>

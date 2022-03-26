@@ -3,7 +3,7 @@ import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Typog
 import { ChangeThemeStyles } from './_Styles'
 import { useDispatch, useSelector } from 'react-redux';
 import { ChangeTheme as ChangeThemeAction } from '../../Redux/Actions/AppActions';
-
+import Text from '../_GlobalComponents/Text';
 const ChangeTheme = () => {
     const classes = ChangeThemeStyles();
     const dispatch = useDispatch();
@@ -14,7 +14,9 @@ const ChangeTheme = () => {
     },[mode]);
     return (
         <Box className={classes.container} >
-            <Typography className={classes.themeTitle}>Theme Mode</Typography>
+            <Typography className={classes.themeTitle}>
+                <Text value="theme"/>
+            </Typography>
             <FormControl>
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
@@ -26,8 +28,8 @@ const ChangeTheme = () => {
                         )
                     }}
                 >
-                    <FormControlLabel value="Dark" className={classes.radio} control={<Radio />} label="Dark" />
-                    <FormControlLabel value="Light" className={classes.radio} control={<Radio />} label="Light" />
+                    <FormControlLabel value="Dark" className={classes.radio} control={<Radio />} label={<Text value="Dark"/>} />
+                    <FormControlLabel value="Light" className={classes.radio} control={<Radio />} label={<Text value="Light"/>}  />
                 </RadioGroup>
             </FormControl>
             

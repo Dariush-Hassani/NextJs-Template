@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const ChangeDirectionStyles = makeStyles((theme) => ({
+export const ChangeLanguageStyles = makeStyles((theme) => ({
     title: {
         color: theme.palette.secondary.main
     },
@@ -17,7 +17,8 @@ export const ChangeDirectionStyles = makeStyles((theme) => ({
         top: '-8px',
         background: theme.palette.primary.main,
         width:'100px',
-        color: theme.palette.secondary.main
+        color: theme.palette.secondary.main,
+        textAlign:'center'
     },
     radio:{
         "& svg":{
@@ -47,7 +48,8 @@ export const ChangeThemeStyles = makeStyles((theme) => ({
         top: '-8px',
         background: theme.palette.primary.main,
         width:'100px',
-        color: theme.palette.secondary.main
+        color: theme.palette.secondary.main,
+        textAlign:'center'
     },
     radio:{
         "& svg":{

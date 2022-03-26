@@ -7,3 +7,15 @@ export const breakpoints = {
         xl: 1536,
     },
 };
+
+export const languages = [
+    {
+        lang: 'fa',
+        title: 'فارسی',
+        direction: 'rtl'
+    },{
+        lang: 'en',
+        title: 'english',
+        direction: 'ltr'
+    },
+]

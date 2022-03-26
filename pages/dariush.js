@@ -1,8 +1,11 @@
+import Link from 'next/link'
 import React from 'react'
 
 const dariush = () => {
   return (
-    <div>dariush</div>
+    <div>
+      <Link href="/">Home</Link>
+    </div>
   )
 }
 

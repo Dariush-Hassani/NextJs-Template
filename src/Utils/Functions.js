@@ -24,7 +24,7 @@ export const initAppState = () => {
   if (!app && typeof window !== 'undefined') {
     newApp = {
       Language: {
-        lan: 'fa',
+        lang: 'fa',
         direction: 'rtl',
         title: 'فارسی'
       },
