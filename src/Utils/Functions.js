@@ -1,4 +1,4 @@
-import { breakpoints } from "./Config";
+import { breakpoints, languages } from "./Config";
 
 export const setBreakPoint = () => {
   let BreakPoint = '';
@@ -19,14 +19,15 @@ export const setBreakPoint = () => {
 }
 
 export const initAppState = () => {
+  let defaultLang = languages.find(x => x.lang === 'fa');
   const app = typeof window !== 'undefined' && localStorage.getItem('app');
   let newApp;
   if (!app && typeof window !== 'undefined') {
     newApp = {
       Language: {
-        lang: 'fa',
-        direction: 'rtl',
-        title: 'فارسی'
+        lang: defaultLang.lang,
+        direction: defaultLang.direction,
+        title: defaultLang.title
       },
       theme: 'Dark',
     }
@@ -35,4 +36,15 @@ export const initAppState = () => {
     newApp = JSON.parse(app);
   }
   return newApp;
+}
+
+export const initToken = () => {
+  let token = typeof window !== 'undefined' && localStorage.getItem('token');
+  if (!token && typeof window !== 'undefined') {
+    localStorage.setItem('token', '');
+    return '';
+  }
+  else {
+    return token;
+  }
 }

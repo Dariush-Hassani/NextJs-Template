@@ -1,8 +1,8 @@
 module.exports = {
-    locales: ["fa", "en"],
-    defaultLocale: "fa",
-    pages: {
-      "*": ["common"],
-    },
-    localeDetection: false
-  };
+  locales: ["fa", "en"],
+  defaultLocale: "en",
+  pages: {
+    "*": ["common"],
+  },
+  localeDetection: false
+};

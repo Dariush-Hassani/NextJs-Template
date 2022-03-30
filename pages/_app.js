@@ -32,7 +32,7 @@ function MyApp(props) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
 
-    router.push(router.asPath, undefined, { locale: appState.Language.lang })
+    router.push(router.asPath, undefined, { locale: appState.Language.lang });
 
     const setBreaks = () => {
       let breakpoint = setBreakPoint();
@@ -54,7 +54,6 @@ function MyApp(props) {
     <React.Fragment>
       <StylesProvider jss={jss}>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
