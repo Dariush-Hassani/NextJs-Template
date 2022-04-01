@@ -19,3 +19,5 @@ export const languages = [
         direction: 'ltr'
     },
 ]
+
+export const baseUrl = 'https://jsonplaceholder.typicode.com';

@@ -41,6 +41,7 @@ function MyApp(props) {
     if (typeof window !== undefined) {
       window.addEventListener('resize', setBreaks)
     }
+
     return (() => {
       window.removeEventListener('resize', setBreaks)
     })

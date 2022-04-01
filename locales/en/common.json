@@ -2,5 +2,9 @@
   "theme": "Theme mode",
   "Dark": "Dark",
   "Light": "Light",
-  "Language": "Language"
+  "Language": "Language",
+  "AllTasks": "All Tasks",
+  "Title": "Title",
+  "ID": "ID",
+  "Loading":"Loading"
 }
