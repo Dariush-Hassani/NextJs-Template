@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import List from '../../src/Components/client-side-sample-page/List'
 import Text from '../../src/Components/_GlobalComponents/Text'
-import { FetchList } from '../../src/Redux/Actions/CilentSideSampleActions'
+import { ClearAllData, FetchList } from '../../src/Redux/Actions/CilentSideSampleActions'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +19,9 @@ const index = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(FetchList());
+        return () => {
+            dispatch(ClearAllData());
+        }
     }, [])
     return (
         <>

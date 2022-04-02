@@ -7,7 +7,7 @@ import Text from '../_GlobalComponents/Text'
 const List = () => {
     const classes = ListStyles();
     const data = useSelector(state => state.ClientSideSample.list);
-    const loading = useSelector(state => state.ClientSideSample.loading)
+    const loading = useSelector(state => state.ClientSideSample.loadingList)
 
     return (
         <Box className={classes.mainContainer}>
@@ -16,7 +16,7 @@ const List = () => {
                 data?.map(item =>
                     <Box key={item.id}>
                         <Typography component="span" className={classes.typo}> {item.id} {'-------'} </Typography>
-                        <Link href={`/ssr-sample-page/${item.id}`}>
+                        <Link href={`/client-side-sample-page/${item.id}`}>
                             <Typography component="span" className={`${classes.typo} ${classes.Link}`}>{item.title}</Typography>
                         </Link>
                     </Box>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ssrSamplePageAPI } from '../../src/Services/_APIs'
 import Todo from '../../src/Components/ssr-sample-page/Todo';
 

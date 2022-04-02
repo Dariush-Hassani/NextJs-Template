@@ -6,5 +6,9 @@
   "AllTasks": "All Tasks",
   "Title": "Title",
   "ID": "ID",
-  "Loading":"Loading"
+  "Loading":"Loading",
+  "SSR": "SSR Data Fetch Links",
+  "Static":"Static Route",
+  "Dynamic":"Dynamic Route",
+  "ClientSide":"Client Side Data Fetch Links"
 }

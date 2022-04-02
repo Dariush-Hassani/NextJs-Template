@@ -1,3 +1,5 @@
+export const baseUrl = 'https://jsonplaceholder.typicode.com';
+
 export const breakpoints = {
     values: {
         xs: 0,
@@ -19,5 +21,3 @@ export const languages = [
         direction: 'ltr'
     },
 ]
-
-export const baseUrl = 'https://jsonplaceholder.typicode.com';

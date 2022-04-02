@@ -19,7 +19,7 @@ export const setBreakPoint = () => {
 }
 
 export const initAppState = () => {
-  let defaultLang = languages.find(x => x.lang === 'fa');
+  let defaultLang = languages.find(x => x.lang === 'en');
   const app = typeof window !== 'undefined' && localStorage.getItem('app');
   let newApp;
   if (!app && typeof window !== 'undefined') {
